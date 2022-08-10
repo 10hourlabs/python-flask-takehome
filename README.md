@@ -27,9 +27,9 @@ Build a Web API(Python/Flask app - api only)  that:
 * Set cleaning schedules
 * Edit schedules 
 
-### Schema.sql
-User 
+### Schema.sql 
 ```
+User
 > ID 
 > Name 
 > Email Address 
