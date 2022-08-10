@@ -1,6 +1,6 @@
 
 ## Overview
-Company Yola is a startup company that connects cleaning companies to individuals. A solution was built to manage cleaners profile, client details, payment, etc. But the company needed a way to schedule cleaners' shifts and send reminders when a client requested a change.
+Company Yola is a startup company that connects cleaning companies to individuals and companies(client). A solution was built to manage cleaners profile, client details, payment, etc. But the company needed a way to schedule cleaners' shifts and send reminders when a client requested a change.
 
 ### How the system works
 * A client can request a cleaner from a company
