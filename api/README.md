@@ -13,8 +13,12 @@ $ cd Project
 $ git clone git@github.com:10hourlabs/python-flask-takehome.git
 $ cd python-flask-takehome/api
 $ pip install -r requirements.txt
-$ python app.py
+$ make db
+$ make dev
 ```
+- _make db_ : populate database with dummy data
+- _make dev_ : run development server
+
 
 Open http://127.0.0.1:4000/, customize project files and **have fun**.
 
@@ -33,8 +37,10 @@ If you never worked with python projects then the simplest way is run project in
 
     ├── app.py
     ├── README.md
-    ├── models.py
     ├── .python-version
     ├── Dockerfile
     ├── requirements.txt
     ├── tasks.py
+    ├── Makefile
+
+- _test.db_ : this is an sqlite database file which contains the migrated database model.
