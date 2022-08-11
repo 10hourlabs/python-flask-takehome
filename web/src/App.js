@@ -84,6 +84,27 @@ function App() {
               <h4 className="font-bold">Shift</h4>
               <button className="bg-gray-600 py-2 px-10 rounded-md text-white text-sm hover:bg-gray-500">Add</button>
             </div>
+            <div className="py-3">
+              Select Date
+            <input
+                  type="date"
+                  className="form-control block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                  placeholder="Select Date"
+                />
+            </div>
             <div className="grid grid-cols-3 gap-4 pt-3">
               <div className="text-sm">Days</div>
               <div className="text-sm">Start Hours</div>
