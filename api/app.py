@@ -1,9 +1,15 @@
 from flask import Flask
-app = Flask(__name__)
+from flask_restx import Resource, Api
 
-@app.route('/')
-def hello_geek():
-    return '<h1>Hello from Flask & Docker</h2>'
+app = Flask(__name__)
+api = Api(app)
+
+
+### implement all your routes here
+@api.route('/hello')
+class HelloWorld(Resource):
+    def get(self):
+        return {'hello': 'world'}
 
 if __name__ == "__main__":
     app.run(debug=True)
