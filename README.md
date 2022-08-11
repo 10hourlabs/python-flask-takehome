@@ -63,6 +63,10 @@ Client
 
 
 ### Technologies
-* Python/Flask/Flask-restx
+* Python/Flask
 * JavaScript/React
-* MySQL/Postgresql
+* MySQL
+
+## Next stage
+Setup the project in this repo
+
