@@ -42,5 +42,3 @@ If you never worked with python projects then the simplest way is run project in
     ├── requirements.txt
     ├── tasks.py
     ├── Makefile
-
-- _test.db_ : this is an sqlite database file which contains the migrated database model.

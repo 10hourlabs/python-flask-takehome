@@ -2,7 +2,7 @@
 from sqlalchemy_utils import ChoiceType
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
-from flask_restx import Resource, Api
+from flask_restx import Resource, fields, Api
 
 app = Flask(__name__)
 api = Api(app)
@@ -69,7 +69,22 @@ class Client(db.Model):
         return '<Client %r>' % self.name
 
 
-########### ROUTES #############
+# ########### SERIALIZERS #############
+company_serializer = api.model('Model', {
+    'id': fields.Integer(readOnly=True, description='The unique identifier of a company'),
+    'name': fields.String(required=True, description='The name of the company')
+})
+
+user_serializer = api.model('Model', {
+    'id': fields.Integer(readOnly=True, description='The unique identifier of user'),
+    'name': fields.String(required=True, description='The name of user'),
+    'email_address': fields.String(required=True, description='The email address of user'),
+    'availability_status': fields.String(required=True, description='The availability status of user'),
+    'company': fields.Nested(company_serializer)
+
+})
+
+# ########### ROUTES #############
 @api.route('/hello')
 class HelloWorld(Resource):
     def get(self):
@@ -77,12 +92,14 @@ class HelloWorld(Resource):
 
 
 @api.route('/companies')
-class Company(Resource):
+class Companies(Resource):
+    @api.marshal_with(company_serializer, envelope='resource')
     def get(self):
         return Company.query.all()
 
 
 @api.route('/users/<int:company_id>')
-class User(Resource):
+class Users(Resource):
+    @api.marshal_with(user_serializer, envelope='resource')
     def get(self, company_id):
-        return User.query.filter_by(company_id).all()
+        return User.query.filter_by(company_id=company_id).all()
