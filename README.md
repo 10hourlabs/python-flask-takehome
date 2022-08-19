@@ -71,4 +71,4 @@ Client
 Setup the project in this repo
 
 ## RUN services
-`docker-compose up -d`
+`docker-compose up -d --build`
