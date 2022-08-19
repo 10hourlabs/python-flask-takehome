@@ -4,5 +4,6 @@ COPY ./api ./app
 WORKDIR /app
 RUN pip install -r requirements.txt
 RUN python data.py
+EXPOSE 3001
 ENTRYPOINT [ "python" ]
 CMD ["runserver.py"]
