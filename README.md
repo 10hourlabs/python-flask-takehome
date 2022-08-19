@@ -70,3 +70,5 @@ Client
 ## Next stage
 Setup the project in this repo
 
+## RUN services
+`docker-compose up -d`
